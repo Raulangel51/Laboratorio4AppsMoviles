@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    android:label="@string/about"
+    app:startDestination="@id/titleFragment2">
+
+    <fragment
+        android:id="@+id/titleFragment2"
+        android:name="com.example.infoguatelab4versionfinal.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment2_to_articleFragment"
+            app:destination="@id/articleFragment" />
+        <argument
+            android:name="Name"
+            android:defaultValue=" "
+            app:argType="string" />
+        <action
+            android:id="@+id/action_titleFragment2_to_AboutFragment2"
+            app:destination="@id/AboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.infoguatelab4versionfinal.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article">
+        <action
+            android:id="@+id/action_articleFragment_to_comentFragment"
+            app:destination="@id/comentFragment"
+            app:popUpTo="@+id/articleFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/comentFragment"
+        android:name="com.example.infoguatelab4versionfinal.ComentFragment"
+        android:label="fragment_coment"
+        tools:layout="@layout/fragment_coment" />
+    <fragment
+        android:id="@+id/AboutFragment"
+        android:name="com.example.infoguatelab4versionfinal.AboutFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about" />
+</navigation>
